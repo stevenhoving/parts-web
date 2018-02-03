@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Category } from '../category';
-import { CategoryTree } from '../category-data';
+import {CategoryService} from "../services/category.service";
 
 @Component({
   selector: 'app-category',
@@ -9,9 +8,14 @@ import { CategoryTree } from '../category-data';
 })
 export class CategoryComponent implements OnInit
 {
-  nodes = CategoryTree;
+  nodes = [];
+
+  constructor (private categoryService: CategoryService)
+  {
+  }
 
   ngOnInit() {
+    this.nodes = this.categoryService.getCategoryTree();
   }
 
   onEvent(ev: any) {

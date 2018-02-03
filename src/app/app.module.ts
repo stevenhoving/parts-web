@@ -18,6 +18,7 @@ import { DataCollectionComponent } from './parts-table/parts-table.component';
 
 // app services
 import { APIService } from './services/api.service';
+import { CategoryService } from './services/category.service';
 
 @NgModule({
   declarations: [AppComponent, CategoryComponent, DataCollectionComponent],
@@ -30,7 +31,7 @@ import { APIService } from './services/api.service';
     CdkTableModule,
     HttpClientModule,
     AppMaterialModules],
-  providers: [APIService],
+  providers: [APIService, CategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
