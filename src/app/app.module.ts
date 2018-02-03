@@ -2,10 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-
-import { AppComponent } from './app.component';
+import { NzTreeModule } from 'ng-tree-antd';
+import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { CategoryComponent } from './category/category.component';
 
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,9 @@ import { CategoryComponent } from './category/category.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    NzTreeModule,
+    NgZorroAntdModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

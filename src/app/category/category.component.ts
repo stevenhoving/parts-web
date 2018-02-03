@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Category } from '../category';
-import { CATEGORIES } from '../category-data';
+import { CategoryTree } from '../category-data';
 
 @Component({
   selector: 'app-category',
@@ -9,19 +9,13 @@ import { CATEGORIES } from '../category-data';
 })
 export class CategoryComponent implements OnInit
 {
-  categories = CATEGORIES;
-  selectedCategory: Category;
+  nodes = CategoryTree;
 
-  constructor()
-  {
+  ngOnInit() {
   }
 
-  ngOnInit()
-  {
+  onEvent(ev: any) {
+    console.log('basic', 'onEvent aka do something... like', ev);
   }
 
-  onSelect(category: Category): void
-  {
-    this.selectedCategory = category;
-  }
 }

@@ -1,21 +1,4 @@
-<!--h2>My Categories</h2-->
-<ul class="category">
-  <li *ngFor="let category of categories"
-      [class.selected]="category === selectedCategory"
-      (click)="onSelect(category)">
-    <!--<span class="badge">{{hero.id}}</!span>--> {{category.name}}
-  </li>
-</ul>
-
-<div *ngIf="selectedCategory">
-
-  <h2>{{ selectedCategory.name | uppercase }} Details</h2>
-  <div><span>id: </span>{{selectedCategory.id}}</div>
-  <div>
-    <label>
-      name:
-      <input [(ngModel)]="selectedCategory.name" placeholder="name">
-    </label>
-  </div>
-
-</div>
+<nz-tree [nzNodes]="nodes"
+         [nzCheckable]="true"
+         (nzEvent)="onEvent($event)">
+</nz-tree>
