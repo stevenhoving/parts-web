@@ -4,19 +4,23 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CdkTableModule } from '@angular/cdk/table';
 
-// 3e party components
+// 3e party modules
 import { NzTreeModule } from 'ng-tree-antd';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { AngularSplitModule } from 'angular-split';
-
-// app components
-import { CategoryComponent } from './category/category.component';
-import { AppComponent } from './app.component';
-import { APIService } from './services/api.service';
+// 3e party wrapper modules
 import { AppMaterialModules } from './material.module';
 
+// app components
+import { AppComponent } from './app.component';
+import { CategoryComponent } from './category/category.component';
+import { DataCollectionComponent } from './parts-table/parts-table.component';
+
+// app services
+import { APIService } from './services/api.service';
+
 @NgModule({
-  declarations: [AppComponent, CategoryComponent],
+  declarations: [AppComponent, CategoryComponent, DataCollectionComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -26,7 +30,7 @@ import { AppMaterialModules } from './material.module';
     CdkTableModule,
     HttpClientModule,
     AppMaterialModules],
-  providers: [],
+  providers: [APIService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
