@@ -5,6 +5,8 @@
     <app-category></app-category>
   </split-area>
   <split-area size="70">
-    <parts-table></parts-table>
+    <parts-table [path]="'https://api.github.com/users'"
+                 [displayedColumns]="['Name', 'Description', 'Storage Location', 'Status', 'Condition', 'Stock', 'Footprint']">
+    </parts-table>
   </split-area>
 </split>
